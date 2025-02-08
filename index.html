@@ -40,10 +40,18 @@
 
         .content {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Always stack elements vertically */
             align-items: center;
             margin: 20px;
         }
+
+        .iframe-container {
+            width: 100%; /* Makes sure iframe spans the full width */
+            display: flex;
+            justify-content: center; /* Centers the iframe */
+            margin-top: 20px;
+        }
+
 
         .content img {
             max-width: 60%; /* Scales the image to 80% of its container */
@@ -60,10 +68,31 @@
             line-height: 1.6;
         }
 
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .text-and-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .iframe-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
         @media (min-width: 768px) {
-            .content {
+            .text-and-image {
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
             }
 
             .welcome {
@@ -71,6 +100,7 @@
                 text-align: left;
             }
         }
+
     </style>
 </head>
 <body>
@@ -81,9 +111,24 @@
         <img src="images/IMG_0545_2.webp" alt="">
         <div class="welcome">
             <p>
-                Thank you for visiting our wedding website! We do not know what we're doing!!!
+                Thank you for visiting our wedding website! 
             </p>
         </div>
+
+        <h1> Itinerary </h1>
+        
+        <ul>
+            <li> Ceremony at Foster's Pavilion in Boston </li>
+            <li> Reception at Barcelona Wine Bar in Cambridge </li>
+            <li> After party at Cambridge Common Restaurant in Cambridge </li>
+
+        </ul>
+
+        <div class="iframe-container">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ORFt4R0NS_0kCEjij0g34obw3fYBspo&ehbc=2E312F" width="1100" height="600"></iframe>
+    </div>
+</main>
+
     </main>
 </body>
 </html>
