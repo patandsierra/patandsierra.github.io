@@ -15,17 +15,21 @@
     <title>Pat and Sierra's Wedding</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
-            color: #333;
+            color: #666;
+            /*background: url('images/bkg.png') no-repeat center center fixed; */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+        
+
         }
 
         .header {
             text-align: center;
             padding: 50px 20px;
-            background-color: #e1fffb;
+            background-color: #e1fffb23;
         }
 
         .header h1 {
@@ -99,6 +103,41 @@
                 margin-left: 20px;
                 text-align: left;
             }
+        
+        #countdown {
+            font-size: 2em;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav.navbar {
+            background-color: #f1f1f1;
+            padding: 10px 0;
+        }
+        nav.navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav.navbar ul li {
+            margin: 0 15px;
+        }
+        nav.navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+        }
+        nav.navbar ul li a:hover {
+            color: #000000;
+            background-color: #b0b0b0;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        } 
         }
 
     </style>
@@ -106,27 +145,75 @@
 <body>
     <header class="header">
         <h1>Pat and Sierra's Wedding</h1>
+        <nav class="navbar">
+          <ul>
+              <li><a href="#rsvp">RSVP</a></li>
+              <li><a href="#itinerary">Itinerary</a></li>
+              <li><a href="#dress-code">Dress Code</a></li>
+              <li><a href="#hotel">Hotel</a></li>
+              <li><a href="#registry">Registry</a></li>
+              <li><a href="#things-to-do">Things to Do</a></li>
+          </ul>
+        </nav>
     </header>
+
     <main class="content">
         <img src="images/IMG_0545_2.webp" alt="">
         <div class="welcome">
             <p>
                 Thank you for visiting our wedding website! 
             </p>
+
+            <div id="countdown"></div>
+  
+            <script>
+                var countDownDate = new Date("Oct 05, 2025 16:30:00").getTime();
+                
+                var x = setInterval(function() {
+                    var now = new Date().getTime();
+                    var distance = countDownDate - now;
+                
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " 
+                    + minutes + "m " + seconds + "s ";
+                
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("countdown").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            </script>
         </div>
 
-        <h1> Itinerary </h1>
-        
-        <ul>
-            <li> Ceremony at Foster's Pavilion in Boston </li>
-            <li> Reception at Barcelona Wine Bar in Cambridge </li>
-            <li> After party at Cambridge Common Restaurant in Cambridge </li>
+        <h1 id="rsvp"> RSVP </h1>
+        Coming soon!
 
-        </ul>
+        <h1 id="itinerary"> Itinerary </h1>
+        
+        <p> &nbsp; 4:30 – 5:00 pm: Ceremony at Foster's Pavilion in Boston <br> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5:30 pm: Bus from ceremony to reception <br>
+            6:00 – 10:00 pm: Reception at Barcelona Wine Bar in Cambridge 
+         </p>
+
 
         <div class="iframe-container">
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ORFt4R0NS_0kCEjij0g34obw3fYBspo&ehbc=2E312F" width="1100" height="600"></iframe>
-    </div>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ORFt4R0NS_0kCEjij0g34obw3fYBspo&ehbc=2E312F" width="900" height="600"></iframe>
+        </div>
+
+        <h1 id="dress-code"> Dress Code </h1>
+        Semi-formal (or wear whatever you want to wear, we really don't care!).
+
+        <h1 id="hotel"> Hotel </h1>
+
+        <h1 id="registry"> Registry </h1>
+
+        <h1 id="things-to-do"> Things to Do in Boston </h1>
+        
+
 </main>
 
     </main>
